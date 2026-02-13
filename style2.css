@@ -1,0 +1,52 @@
+body {
+  /* This ensures the background stays still while you scroll */
+  background-image: url('wallpaper.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000; /* Backup color so you never see white */
+  
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  /* Remove position: fixed from here! */
+  min-height: 100vh; 
+}
+
+#moments {
+  display: grid;
+  /* 3 equal columns */
+  grid-template-columns: repeat(3, 1fr); 
+  /* Rows will automatically size based on content */
+  grid-auto-rows: min-content; 
+  gap: 45px;
+  
+  width: 95%;
+  max-width: 900px; /* Adjust this to make the grid wider or thinner */
+  padding: 40px 0; /* Space at top and bottom so it doesn't hit edges */
+}
+
+#moments div {
+  background-color: #e74c3c;
+  border-radius: 8px;
+  overflow: hidden; /* Keeps images inside the rounded corners */
+  display: flex;
+  
+}
+
+#moments img,video{
+  width: 100%;
+  height: auto; /* Set a fixed height for a uniform look */
+  object-fit: cover; 
+  display: block;
+}
+
+/* Target the div container instead of the image */
+#moments img:hover {
+  transform: translatez(-55px); /* Lifts the image up */
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); /* Adds a soft glow */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Makes it smooth */
+}
